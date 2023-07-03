@@ -1,9 +1,10 @@
 import axios from "axios"
 import { useEffect } from "react"
+const host = process.env.NEXT_PUBLIC_APIAUTH
 
 export default function Home () {
   useEffect(()=>{
-    axios.get('http://localhost:3000/api/tours').then((res)=>{
+    axios.get(`${host}/api/tours`).then((res)=>{
       console.log(res);
     }).catch(()=>{
       console.log("lỗi")
